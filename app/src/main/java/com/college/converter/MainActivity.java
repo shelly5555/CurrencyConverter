@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonConvert.setOnClickListener(view -> {
             convertCurrency(view);
+
         });
     }
 
