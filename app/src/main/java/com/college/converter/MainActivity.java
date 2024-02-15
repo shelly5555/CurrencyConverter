@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     ActivityMainBinding binding;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,7 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
             Float resultFloat = inputAmountDecimal * CONVERSION_RATE;
 
+            String resultString = getString(R.string.result_euros, resultFloat);
+            resultView.setText(resultString);
+
+
             resultView.setText(resultFloat + " Euros");
+
         }
     }
 
