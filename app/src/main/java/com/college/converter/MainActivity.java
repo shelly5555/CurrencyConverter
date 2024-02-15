@@ -4,7 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import android.util.Log;
+
 import android.view.LayoutInflater;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("MainActivity", "Entering onCreate");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -43,11 +48,16 @@ public class MainActivity extends AppCompatActivity {
         buttonConvert.setOnClickListener(view -> {
             convertCurrency(view);
 
+        } );
+        Log.i("MainActivity", "Exiting onCreate");
+
+
         });
+
     }
 
     public void convertCurrency(View view) {
-
+        Log.i("MainActivity", "Entering convertCurrency");
         EditText inputView = findViewById(R.id.entryId);
 
         String inputAmount = inputView.getText().toString();
@@ -66,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
             resultView.setText(resultFloat + " Euros");
 
         }
+        Log.i("MainActivity", "Exiting convertCurrency");
     }
 
 }
